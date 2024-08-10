@@ -2,14 +2,14 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: kubesec-server
-  name: kubesec-server
+    app: kubesec_server
+  name: kubesec_server
 spec:
   ports:
   - name: https
-    port: {{ .Values.kubesec-server.service.port }}
+    port: {{ .Values.kubesec_server.service.port }}
     protocol: TCP
-    targetPort: {{ .Values.kubesec-server.deployument.containerPort }}
+    targetPort: {{ .Values.kubesec_server.deployument.containerPort }}
   selector:
-    app: kubesec-server
-  type: ClusterIP
+    app: kubesec_server
+  type: {{ .Values.kubesec_server.service.type }}
