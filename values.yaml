@@ -2,6 +2,7 @@
 webhook_server: {}
 
 kubesec_server: 
+  enabled: true
   deployment: 
     containerPort: 443
   service: 

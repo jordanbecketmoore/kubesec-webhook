@@ -1,15 +1,17 @@
+{{- if .Values.kubesec_server.enabled }}
 apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: kubesec_server
-  name: kubesec_server
+    app: kubesec-server
+  name: kubesec-server
 spec:
   ports:
   - name: https
     port: {{ .Values.kubesec_server.service.port }}
     protocol: TCP
-    targetPort: {{ .Values.kubesec_server.deployument.containerPort }}
+    targetPort: {{ .Values.kubesec_server.deployment.containerPort }}
   selector:
-    app: kubesec_server
+    app: kubesec-server
   type: {{ .Values.kubesec_server.service.type }}
+{{- end }}
