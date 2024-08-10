@@ -3,8 +3,8 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: kubesec-server
-  name: kubesec-server
+    app: webhook-server
+  name: webhook-server
 spec:
   ports:
   - name: https
@@ -12,5 +12,5 @@ spec:
     protocol: TCP
     targetPort: https
   selector:
-    app: kubesec-server
+    app: webhook-server
   type: ClusterIP
